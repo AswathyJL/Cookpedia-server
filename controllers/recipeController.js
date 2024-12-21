@@ -18,14 +18,12 @@ exports.getRecipeController = async (req,res)=>{
     // need id of the recipe - access values in url 
     // get dynamic values from url
     const {id} = req.params
-
     try {
         const recipeDetials = await recipes.findById({_id:id})
         res.status(200).json(recipeDetials)
     } catch (err) {
         res.status(401).json(err)
     }
-
 }
 
 // related recipe 
@@ -38,7 +36,6 @@ exports.relatedRecipeController = async(req,res)=>{
     }catch(err){
         res.status(401).json(err)
     }
-    
 }
 
 // addRecipe
